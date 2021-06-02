@@ -10,8 +10,7 @@ using namespace std;
 class Token // Benutzerdefinierter Typ namens Token.
 {
 public: // Die folgenden Teile sind direkt zugreifbar.
-    char kind; // Tokensymbol, '9' soll fuer Zahl stehen.
-    double value; // Wert (nur fuer Zahl-Token).
+
     void print() const {
         if( kind == '9' ) cout << value << endl;
         else cout << kind << endl;
@@ -22,6 +21,26 @@ public: // Die folgenden Teile sind direkt zugreifbar.
     Token( const double& d ) : kind{'9'}, value{d} { /* mache nichts sonst */ }
 // Standardkonstruktor, erstelle "das Standardtoken" ohne Vorgabe:
     Token( ) : Token{0.0} { /* mache nichts sonst */ }
+
+    char getKind() const {
+        return kind;
+    }
+
+    void setKind(char kind) {
+        this->kind = kind;
+    }
+
+    double getValue() const {
+        return value;
+    }
+
+    void setValue(double value) {
+        this->value = value;
+    }
+
+private:
+    char kind; // Tokensymbol, '9' soll fuer Zahl stehen.
+    double value; // Wert (nur fuer Zahl-Token).
 };
 
 
