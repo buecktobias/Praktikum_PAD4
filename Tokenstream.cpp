@@ -19,6 +19,7 @@ Token Token_stream::get() {
     switch (ch) {
         case ';': // Ende eines Rechenausdrucks
         case 'q': // Programmende
+        case '?':
         case '(':
         case ')':
         case '+':
