@@ -5,7 +5,7 @@
 #ifndef PRAKTIKUM_PAD4_TOKENSTREAM_H
 #define PRAKTIKUM_PAD4_TOKENSTREAM_H
 
-
+#include "error.h"
 #include "Token.h"
 
 class Token_stream {
