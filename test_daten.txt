@@ -1,0 +1,23 @@
+Man sollte versuchen möglichst unterschiedliche Sachen zu testen also mit Klammern ohne Klammern * - / +.
+Und eben auch Fehler Fälle welche nicht funktionieren sollten.
+Eingabe;erwartete Ausgabe; tatsächlische Ausgabe
+5+5; => 10 ; 10
+5+5*5; => 30; 30
+2+1*5; => 7; 7
+(2+1)*5; => 15; 15
+-3+5; => 2 ; 2
+5+(-3); => 2; 2
++; => error; error
+5-*3; => error; error
+5-(-3); => 8 ; 8
+2000; => error; 2000
+3.22; => error; 3.22
+q => _ ; _
+? =>   Info text ; Info Text
+5/2; => 2.5; 2.5
+a; => error; error
+5; => 5; 5
+-1 => -1; -1
+test => error; error
+a+b => error
+1+1+1+1+1 =>5;5

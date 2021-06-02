@@ -22,5 +22,5 @@ int main() try {
     }
     return 0;
 } catch (const std::exception& e) {
-    cout << "error!!!";
+    cout << e.what();
 }
