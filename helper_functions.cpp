@@ -51,6 +51,10 @@ double primary(Token_stream &ts) // Zahlen und Klammern behandeln
 {
     Token t3{ts.get()};
     switch (t3.getKind()) {
+        case '-':
+            return - primary(ts);
+        case '+':
+            return primary(ts);
         case '9':
             return t3.getValue();
         case '(': {
