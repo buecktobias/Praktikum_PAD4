@@ -11,7 +11,7 @@ double term(Token_stream &ts) // "mal" und "geteilt durch" behandeln
     Token t2{};
     while (true) {
         t2 = ts.get();
-        switch (t2.kind) {
+        switch (t2.getKind()) {
             case '*':
                 d2 *= primary(ts);
                 break;
@@ -34,7 +34,7 @@ double expression(Token_stream &ts) // "plus" und "minus" behandeln
     Token t1{};
     while (true) {
         t1 = ts.get();
-        switch (t1.kind) {
+        switch (t1.getKind()) {
             case '+':
                 d1 += term(ts);
                 break;
@@ -50,15 +50,16 @@ double expression(Token_stream &ts) // "plus" und "minus" behandeln
 double primary(Token_stream &ts) // Zahlen und Klammern behandeln
 {
     Token t3{ts.get()};
-    switch (t3.kind) {
+    switch (t3.getKind()) {
         case '9':
-            return t3.value;
+            return t3.getValue();
         case '(': {
             double d3{expression(ts)};
-            if (ts.get().kind != ')') error("keine rechte Klammer");
+            if (ts.get().getKind() != ')') error("keine rechte Klammer");
             return d3;
         }
         default:
             error("kein Primary");
+            return -1;
     }
 }

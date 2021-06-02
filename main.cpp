@@ -10,8 +10,8 @@ int main() try {
     while (cin) {
         cout << "> "; // Prompt
         tok = ts.get();
-        if (tok.kind == ';') continue;
-        if (tok.kind == 'q') break;
+        if (tok.getKind() == ';') continue;
+        if (tok.getKind() == 'q') break;
         ts.putback(tok);
         cout << "= " << expression(ts) << endl;
     }
